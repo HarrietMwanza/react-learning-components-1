@@ -1,21 +1,27 @@
-import Image from 'next/image'
 import React, { useState } from 'react';
-export default function Home() {
-    const magicNumber = 30;
-  const [cardResults, setCardResults] = useState([magicNumber / 3]);
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24`}
-    >
-<div>
-<card number={magicNumber} />
-  </div>  
-    </main>
-  );
 
-}
-function card({ magicNumber }) {
+const MagicNumberCard = ({ value }) => {
   return (
-      <h2>magicNumber is {magicNumber}</h2>
+    <div className="card">
+      <h2>{value}</h2>
+    </div>
   );
-}
+};
+
+const MagicNumberComponent = () => {
+  const [cards] = useState([10, 10, 10]);
+  //lacks "set"
+
+  return (
+    <div>
+      <h1>Magic Number: 30</h1>
+      <div className="card-container">
+        {cards.map((cardValue, index) => (
+          <MagicNumberCard key={index} value={cardValue} /> //what des"key" d
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MagicNumberComponent;

@@ -1,27 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.card {
+  width: 200px;
+  height: 100px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.card h2 {
+  font-size: 24px;
+  color: #333;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.magic-number {
+  font-size: 24px;
+  color: #333;
+  text-align: center; /* Added text-align property */
+  margin: 0; /* Added margin property to remove default margin */
+  padding: 20px 0; /* Added padding for spacing */
 }
